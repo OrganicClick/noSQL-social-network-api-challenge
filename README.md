@@ -15,7 +15,7 @@
 
 ## Description
 
-This project involves building the back end for an e-commerce site using Express.js API and Sequelize to interact with a MySQL database. The application is designed to simulate the functionality of an e-commerce platform by implementing models for products, categories, tags, and product tags.
+This project is a social network API built with NoSQL database technology, specifically MongoDB. The API allows users to share their thoughts, react to friends' thoughts, and manage friend lists. It leverages Express.js for routing and Mongoose ODM for interacting with the MongoDB database.
 
 ## User Story
 AS A social media startup
@@ -69,13 +69,9 @@ Please click the following link to view a video walkthrough of how to use the ap
 
 
 ## Technologies Used
-Node.js
+MongoDB
 
-Sequelize package
-
-MySQL
-
-MySQL2 Package
+Mongoose ODM
 
 Dotenv package
 
