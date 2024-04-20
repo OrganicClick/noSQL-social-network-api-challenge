@@ -109,21 +109,9 @@ Express.js
 Development was assisted by the following resources:
  - Xpert Learning Assistant provided by the GWU Coding Boot Camp. Provided general guidance and assistance with Installation
    instructions and Usage instructions
- - Initial file architecture suggested by Xpert Learning Assistant
+ - Initial file architecture referenced is one of my previous assignments (https://github.com/OrganicClick/e-commerce-back-end-challenge)
  - Project guidelines, initial screenshots, reference mock-up, and accepted terms of submission provided by GWU Coding Boot Camp
- - Starter code provided by GWU Coding Boot Camp, the contents of the Develop folder(https://github.com/coding-boot-camp/fantastic-umbrella)
- - Installation documentation for MySQL2 (https://www.npmjs.com/package/mysql2#installation)
- - Sequelize documentation, including installation and usage (https://www.npmjs.com/package/sequelize)
- - Setting Up a Database and Seed File (https://medium.com/@shannen.ye/setting-up-a-database-and-seed-file-7e73fe2a9fe6)
- - Installation/usage documentation for dotenv package (https://www.npmjs.com/package/dotenv)
- - Installation/usage documentation for Express.js package (https://www.npmjs.com/package/express)
- - Sequelize core concepts documentation (https://sequelize.org/docs/v6/category/core-concepts/_)
- - Understanding the difference between CRUD and REST operations (https://www.strongdm.com/what-is/crud-vs-rest)
- - Best practices for for REST API design, covers routing syntax as well (https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
- - ChatGPT used to assist with syntax of RESTful API routing (https://chat.openai.com/)
- - Referenced for troubleshooting issues related to the order of dropping tables causing errors when trying to run "npm run seed" (https://www.sqlines.com/sql-server/drop_references#:~:text=In%20SQL%20Server%2C%20you%20cannot,or%20remove%20foreign%20key%20constraints.)
- - Referenced for creation of code needed in server.js to sync the Sequelize models to the MYSQL database on server start (https://sequelize.org/docs/v6/core-concepts/model-basics/#:~:text=A%20model%20can%20be%20synchronized,model%20in%20the%20JavaScript%20side.)
- - Introduction to Insomnia and other Insomnia documentation (https://docs.insomnia.rest/insomnia/get-started)
+ - Xpert Learning Assistant consulted for initial summarization and description of assignment 
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
