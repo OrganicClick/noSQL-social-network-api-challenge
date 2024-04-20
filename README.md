@@ -94,6 +94,7 @@ Development was assisted by the following resources:
  - Initial file architecture referenced is one of my previous assignments (https://github.com/OrganicClick/e-commerce-back-end-challenge)
  - Project guidelines, initial screenshots, reference mock-up, and accepted terms of submission provided by GWU Coding Boot Camp
  - Xpert Learning Assistant consulted for initial summarization and description of assignment 
+ - Initial Models and API Routes to use were provided by GWU Coding Boot Camp
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
