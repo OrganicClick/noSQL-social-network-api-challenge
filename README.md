@@ -1,4 +1,4 @@
-# e-commerce-back-end-challenge
+# noSQL-social-network-API-challenge
 
 ## Table of Contents
 - [Description](#description)
