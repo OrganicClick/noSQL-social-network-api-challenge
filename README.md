@@ -43,7 +43,10 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 3. Create a .env file and add your MYSQL_USER, MYSQL_PASSWORD, and DB_NAME on a new line.
 
-4. Run `npm install` to install all dependencies.
+4. Please consult the following documentation for installing MongoDB
+    -https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb
+
+5. Run `npm install` to install all dependencies.
 
 
 ## Usage
@@ -91,7 +94,7 @@ Development was assisted by the following resources:
  - Project guidelines, initial screenshots, reference mock-up, and accepted terms of submission provided by GWU Coding Boot Camp
  - Xpert Learning Assistant consulted for initial summarization and description of assignment 
  - Initial Models and API Routes to use were provided by GWU Coding Boot Camp
- - Xpert Learning Assistant consulted for suggestions for prompts after running 'npm init' 
+ - Documentation for installation of MongoDB (https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
