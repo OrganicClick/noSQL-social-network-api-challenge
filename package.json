@@ -1,0 +1,25 @@
+{
+  "name": "nosql-social-network-api-challenge",
+  "version": "1.0.0",
+  "description": "noSQL-based social network API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/OrganicClick/noSQL-social-network-api-challenge.git"
+  },
+  "keywords": [
+    "social",
+    "network",
+    "API",
+    "noSQL"
+  ],
+  "author": "OrganicClick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OrganicClick/noSQL-social-network-api-challenge/issues"
+  },
+  "homepage": "https://github.com/OrganicClick/noSQL-social-network-api-challenge#readme"
+}

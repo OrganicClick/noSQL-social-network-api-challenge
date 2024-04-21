@@ -91,6 +91,7 @@ Development was assisted by the following resources:
  - Project guidelines, initial screenshots, reference mock-up, and accepted terms of submission provided by GWU Coding Boot Camp
  - Xpert Learning Assistant consulted for initial summarization and description of assignment 
  - Initial Models and API Routes to use were provided by GWU Coding Boot Camp
+ - Xpert Learning Assistant consulted for suggestions for prompts after running 'npm init' 
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
