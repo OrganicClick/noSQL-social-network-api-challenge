@@ -22,7 +22,9 @@ router.route('/:thoughtId')
     .put(updateThought) // PUT request to update a thought by its ID
     .delete(deleteThought); // DELETE request to delete a thought by its ID
 
-// // /api/thoughts/:thoughtId
-// router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);
+// Route: /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions')
+    .post(addReaction); // POST request to create a reaction for a thought
+
 
 module.exports = router;
