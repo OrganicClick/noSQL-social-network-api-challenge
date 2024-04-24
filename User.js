@@ -6,15 +6,15 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      // unique: true,
-      //required: true,
-      // trimmed: true,
+      unique: true,
+      required: true,
+      trim: true,
     },
     email: {
       type: String,
-      // required: true,
-      // unique: true,
-      // match: must match a valid email address,
+      required: true,
+      unique: true,
+      match: //must match a valid email address,
       // validate: [validateEmail, 'Please fill a valid email address'], (??)
     },
     thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
