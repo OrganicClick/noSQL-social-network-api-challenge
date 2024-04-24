@@ -96,6 +96,7 @@ Development was assisted by the following resources:
  - Initial Models and API Routes to use were provided by GWU Coding Boot Camp
  - Documentation for installation of MongoDB (https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb)
  - Documentation for use of virtuals in Mongoose (https://mongoosejs.com/docs/tutorials/virtuals.html)
+ - Documentation for use of schemas in Mongoose (https://mongoosejs.com/docs/guide.html)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com

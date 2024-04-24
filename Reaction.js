@@ -2,3 +2,5 @@
 
 const { Schema } = require('mongoose');
 
+// Define the reaction schema
+
