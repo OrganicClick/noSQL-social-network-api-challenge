@@ -1,7 +1,15 @@
 const router = require('express').Router();
 
-//Placeholder text for importing userController functions
-// const {} = require('../../controllers/thoughtController');
+//Import functions from thoughtController file
+const {
+    getAllThoughts,
+    getSingleThought,
+    addThought,
+    updateThought,
+    deleteThought,
+    addReaction,
+    removeReaction
+} = require('../../controllers/thoughtController');
 
 // // /api/thoughts
 // router.route('/').get(getThought).post(createThought);
