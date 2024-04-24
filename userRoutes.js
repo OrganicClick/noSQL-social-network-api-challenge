@@ -1,7 +1,15 @@
 const router = require('express').Router();
 
-//Placeholder text for importing userController functions
-// const {} = require('../../controllers/userController');
+//Functions imported from userController file
+const {
+    getAllUsers,
+    getSingleUser,
+    createUser,
+    updateUser,
+    deleteUser,
+    addFriend,
+    removeFriend
+} = require('../../controllers/userController');
 
 // // /api/users
 // router.route('/').get(getUsers).post(createUser);
