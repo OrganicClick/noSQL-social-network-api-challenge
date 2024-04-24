@@ -98,7 +98,8 @@ Development was assisted by the following resources:
  - Documentation for use of virtuals in Mongoose (https://mongoosejs.com/docs/tutorials/virtuals.html)
  - Documentation for use of schemas in Mongoose (https://mongoosejs.com/docs/guide.html)
  - Referenced my own Github Gist for use of regex in application (https://gist.github.com/OrganicClick/28d61520a28a6f26997e042445f4dd77)
- 
+ - Referenced for using index.js files in node.js applications (https://stackoverflow.com/questions/21063587/what-is-index-js-used-for-in-node-js-projects)
+
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
