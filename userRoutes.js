@@ -21,6 +21,12 @@ router.route('/:userId')
     .get(getSingleUser) // GET request to retrieve a single user by ID
     .put(updateUser) //PUT request to update a user by ID
     .delete(deleteUser); // DELETE request to delete a user by ID
-// router.route('/:userId').get(getSingleUser).put(updateUser).delete(deleteUser);
+
+// Route: /api.users/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId')
+    .post(addFriend) // POST request to add a new friend to a user's friend list
+    .delete(removeFriend); // DELETE request to remove a friend from a user's friend list
+
+// Exporting the router object
 
 module.exports = router;
