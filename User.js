@@ -21,3 +21,8 @@ const userSchema = new Schema(
     friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   },
 )
+
+// Define virtual property to calculate friend count
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+  });

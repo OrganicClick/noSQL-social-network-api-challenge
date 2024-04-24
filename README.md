@@ -95,6 +95,7 @@ Development was assisted by the following resources:
  - Xpert Learning Assistant consulted for initial summarization and description of assignment 
  - Initial Models and API Routes to use were provided by GWU Coding Boot Camp
  - Documentation for installation of MongoDB (https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb)
+ - Documentation for use of virtuals in Mongoose (https://mongoosejs.com/docs/tutorials/virtuals.html)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
