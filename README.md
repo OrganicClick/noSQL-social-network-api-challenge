@@ -100,7 +100,7 @@ Development was assisted by the following resources:
  - Referenced my own Github Gist for use of regex in application (https://gist.github.com/OrganicClick/28d61520a28a6f26997e042445f4dd77)
  - Referenced for using index.js files in node.js applications (https://stackoverflow.com/questions/21063587/what-is-index-js-used-for-in-node-js-projects)
  - Documentation for use of Express routing (https://expressjs.com/en/guide/routing.html)
- 
+ - Referenced for use of CRUD operations using Mongoose and MongoDB (https://www.geeksforgeeks.org/node-js-crud-operations-using-mongoose-and-mongodb-atlas/)
 
 
 ## Contact
