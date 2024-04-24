@@ -22,7 +22,7 @@ router.route('/:userId')
     .put(updateUser) //PUT request to update a user by ID
     .delete(deleteUser); // DELETE request to delete a user by ID
 
-// Route: /api.users/:userId/friends/:friendId
+// Route: /api/users/:userId/friends/:friendId
 router.route('/:userId/friends/:friendId')
     .post(addFriend) // POST request to add a new friend to a user's friend list
     .delete(removeFriend); // DELETE request to remove a friend from a user's friend list
