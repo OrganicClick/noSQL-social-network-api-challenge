@@ -1,3 +1,3 @@
 // Import Mongoose
-const mongoose = require('mongoose');
+const { connect, connection } = require('mongoose');
 
