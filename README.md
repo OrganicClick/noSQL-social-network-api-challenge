@@ -105,6 +105,7 @@ Development was assisted by the following resources:
 - Referenced for seeding a MongoDB database (https://www.mongodb.com/developer/products/mongodb/seed-database-with-fake-data/)
 - Referenced for establishing connection to MongoDB with Javascript (https://mongoosejs.com/docs/connections.html)
 - Utilized to generate necessary syntax to check if a user already exists in a database in the userController file (https://chat.openai.com/)
+- Referenced my previous project for syntax of functions in the userController file (https://github.com/OrganicClick/e-commerce-back-end-challenge)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
