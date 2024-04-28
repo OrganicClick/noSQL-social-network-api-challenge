@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const { reactionSchema } = require('./Reaction');
+const reactionSchema = require('./Reaction');
 
 console.log('reactionSchema:', reactionSchema); // Add this line to check the value of reactionSchema
 
