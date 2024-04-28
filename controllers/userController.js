@@ -35,6 +35,13 @@ module.exports = {
       // Destructure the request body to extract username and email
       const { username, email } = req.body;
 
+      // Check if a user with the specified username already exists
+      const existingUser = await User.findOne({ username });
+
+      if (existingUser) {
+      return res.status(400).json({ error: 'Username already exists' });
+      }
+
       // Create a new user document with the specified fields
       const user = await User.create({
         username,
