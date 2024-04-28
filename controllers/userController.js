@@ -91,12 +91,28 @@ module.exports = {
   // Add a friend to a user's friend list
   async addFriend(req, res) {
     try {
-      // Add logic to add a friend to a user's friend list
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
-    }
-  },
+      // Extract the friendId from the request body
+      const { friendId } = req.body;
+        
+    // Find the user by userId and update its friends array to add the new friendId
+      const user = await User.findByIdAndUpdate(
+          req.params.userId,
+          { $addToSet: { friends: friendId } }, // $addToSet ensures that the friendId is only added if it's not already present
+          { new: true }
+        );
+  
+        // If the user doesn't exist, return a 404 error
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+        }
+  
+        // Send the updated user object in the response
+        res.json(user);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+      }
+    },
 
   // Remove a friend from a user's friend list
   async deleteFriend(req, res) {
