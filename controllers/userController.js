@@ -89,19 +89,21 @@ module.exports = {
   },
 
 // Add a friend to a user's friend list
+// Add a friend to a user's friend list
 async addFriend(req, res) {
   try {
-    // Extract the friendId from the request body
-    const { friendId } = req.body;
+    // Extract the friendId from the request parameters
+    const { friendId } = req.params;
       
-    // Convert the userId and friendId to ObjectId type
-    const userId = mongoose.Types.ObjectId(req.params.userId);
-    const friendObjectId = mongoose.Types.ObjectId(friendId);
-      
+    // Check if the friendId is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(friendId)) {
+      return res.status(400).json({ error: 'Invalid friendId' });
+    }
+
     // Find the user by userId and update its friends array to add the new friendId
     const user = await User.findByIdAndUpdate(
-      userId,
-      { $addToSet: { friends: friendObjectId } }, // $addToSet ensures that the friendId is only added if it's not already present
+      req.params.userId,
+      { $addToSet: { friends: friendId } }, // $addToSet ensures that the friendId is only added if it's not already present
       { new: true }
     );
 
@@ -117,7 +119,6 @@ async addFriend(req, res) {
     res.status(500).json({ error: 'Server error' });
   }
 },
-
 
   // Remove a friend from a user's friend list
   async deleteFriend(req, res) {
