@@ -103,6 +103,7 @@ Development was assisted by the following resources:
  - Referenced for use of CRUD operations using Mongoose and MongoDB (https://www.geeksforgeeks.org/node-js-crud-operations-using-mongoose-and-mongodb-atlas/)
 - Documentation referenced for use of controller and models in Mongoose (https://restful-api-node-typescript.books.dalenguyen.me/en/latest/using-controller-and-model.html)
 - Referenced for seeding a MongoDB database (https://www.mongodb.com/developer/products/mongodb/seed-database-with-fake-data/)
+- Referenced for establishing connection to MongoDB with Javascript (https://mongoosejs.com/docs/connections.html)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
