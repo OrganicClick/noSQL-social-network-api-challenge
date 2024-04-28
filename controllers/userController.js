@@ -117,7 +117,23 @@ module.exports = {
   // Remove a friend from a user's friend list
   async deleteFriend(req, res) {
     try {
-      // Add logic to remove a friend from a user's friend list
+      // Extract the friendId from the request parameters
+      const { friendId } = req.params;
+      
+      // Find the user by userId and update its friends array to remove the specified friendId
+      const user = await User.findByIdAndUpdate(
+        req.params.userId,
+        { $pull: { friends: friendId } }, // $pull removes all instances of the specified friendId from the friends array
+        { new: true }
+      );
+
+      // If the user doesn't exist, return a 404 error
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Send the updated user object in the response
+      res.json(user);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
