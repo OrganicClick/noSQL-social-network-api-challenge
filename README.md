@@ -106,6 +106,9 @@ Development was assisted by the following resources:
 - Referenced for establishing connection to MongoDB with Javascript (https://mongoosejs.com/docs/connections.html)
 - Utilized to generate necessary syntax to check if a user already exists in a database in the userController file (https://chat.openai.com/)
 - Referenced my previous project for syntax of functions in the userController file (https://github.com/OrganicClick/e-commerce-back-end-challenge)
+- Added credit for document referenced for use of findOneandUpdate () (https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/)
+- Document referenced for use of populate method in Mongoose (https://mongoosejs.com/docs/populate.html)
+- Document referenced for use of $addToSet operator in Mongoose (https://www.mongodb.com/docs/manual/reference/operator/update/addToSet/)
 
 ## Contact
 To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com

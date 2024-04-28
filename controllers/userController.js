@@ -7,7 +7,9 @@ module.exports = {
   // Get all users
   async getAllUsers(req, res) {
     try {
-      const users = await User.find();
+      const users = await User.find()
+        .populate('thoughts')
+        .populate('friends'); // Populate the friends field
       res.json(users);
     } catch (error) {
       console.error(error);
@@ -18,7 +20,9 @@ module.exports = {
   // Get a single user by ID
   async getSingleUser(req, res) {
     try {
-      const user = await User.findById(req.params.userId);
+      const user = await User.findOne({ _id: req.params.userId })
+        .populate('thoughts')
+        .populate('friends'); // Populate the friends field
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
@@ -39,7 +43,7 @@ module.exports = {
       const existingUser = await User.findOne({ username });
 
       if (existingUser) {
-      return res.status(400).json({ error: 'Username already exists' });
+        return res.status(400).json({ error: 'Username already exists' });
       }
 
       // Create a new user document with the specified fields
@@ -63,7 +67,11 @@ module.exports = {
   // Update a user by ID
   async updateUser(req, res) {
     try {
-      const user = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true });
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $set: req.body },
+        { runValidators: true, new: true }
+      );
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
@@ -77,7 +85,7 @@ module.exports = {
   // Delete a user by ID
   async deleteUser(req, res) {
     try {
-      const user = await User.findByIdAndDelete(req.params.userId);
+      const user = await User.findOneAndDelete({ _id: req.params.userId });
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
@@ -88,49 +96,48 @@ module.exports = {
     }
   },
 
-// Add a friend to a user's friend list
-// Add a friend to a user's friend list
-async addFriend(req, res) {
-  try {
-    // Extract the friendId from the request parameters
-    const { friendId } = req.params;
-      
-    // Check if the friendId is a valid ObjectId
-    if (!mongoose.Types.ObjectId.isValid(friendId)) {
-      return res.status(400).json({ error: 'Invalid friendId' });
+  // Add a friend to a user's friend list
+  async addFriend(req, res) {
+    try {
+      // Extract the friendId from the request parameters
+      const { friendId } = req.params;
+
+      // Check if the friendId is a valid ObjectId
+      if (!mongoose.Types.ObjectId.isValid(friendId)) {
+        return res.status(400).json({ error: 'Invalid friendId' });
+      }
+
+      // Find the user by userId and update its friends array to add the new friendId
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $addToSet: { friends: friendId } },
+        { runValidators: true, new: true }
+      );
+
+      // If the user doesn't exist, return a 404 error
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Send the updated user object in the response
+      res.json(user);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Server error' });
     }
-
-    // Find the user by userId and update its friends array to add the new friendId
-    const user = await User.findByIdAndUpdate(
-      req.params.userId,
-      { $addToSet: { friends: friendId } }, // $addToSet ensures that the friendId is only added if it's not already present
-      { new: true }
-    );
-
-    // If the user doesn't exist, return a 404 error
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    // Send the updated user object in the response
-    res.json(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
-  }
-},
+  },
 
   // Remove a friend from a user's friend list
   async deleteFriend(req, res) {
     try {
       // Extract the friendId from the request parameters
       const { friendId } = req.params;
-      
+
       // Find the user by userId and update its friends array to remove the specified friendId
-      const user = await User.findByIdAndUpdate(
-        req.params.userId,
-        { $pull: { friends: friendId } }, // $pull removes all instances of the specified friendId from the friends array
-        { new: true }
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $pull: { friends: friendId } },
+        { runValidators: true, new: true }
       );
 
       // If the user doesn't exist, return a 404 error
