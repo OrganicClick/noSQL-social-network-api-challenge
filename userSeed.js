@@ -19,3 +19,6 @@ async function seedUsers() {
         console.error('Error seeding users:', error);
     }
 }
+
+// Export the seedUsers function
+module.exports = seedUsers;
