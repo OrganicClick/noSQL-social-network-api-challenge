@@ -116,7 +116,7 @@ async addFriend(req, res) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
-}
+},
 
 
   // Remove a friend from a user's friend list
@@ -143,5 +143,5 @@ async addFriend(req, res) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
     }
-  }
+  },
 };
