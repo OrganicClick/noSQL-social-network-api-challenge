@@ -1,10 +1,12 @@
 // Import necessary connections and routes
 
 const express = require('express');
-// Make sure this db connection route is correct
-// const db = require('./config/connection'); // Assuming this is your MongoDB connection file
-const thoughtRoutes = require('./routes/api/thoughtRoutes'); // Adjust the routes based on your project structure
-const userRoutes = require('./routes/api/userRoutes'); // Adjust the routes based on your project structure
+const mongoose = require('mongoose');
+const db = require('./config/connection'); // MongoDB connection file
+const thoughtRoutes = require('./routes/api/thoughtRoutes'); // thoughtRoutes file is in the api folder
+const userRoutes = require('./routes/api/userRoutes'); // userRoutes file is in the api folder
+
+// Set up the port
 
 const PORT = process.env.PORT || 3001;
 const app = express();
