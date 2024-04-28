@@ -9,6 +9,9 @@ const userRoutes = require('./routes/api/userRoutes'); // userRoutes file is in 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// MongoDB connection string
+const connectionString = 'mongodb://localhost:27017/socialMedia_DB';
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
