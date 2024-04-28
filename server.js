@@ -21,7 +21,13 @@ app.use('/api/users', userRoutes); // Mount user routes
 
 // Start the server
 db.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log('Database connected successfully'); // Log database connection success
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
   });
-});
+  
+  // Handle database connection errors
+  db.on('error', (error) => {
+    console.error('Error connecting to database:', error);
+  });
