@@ -1,10 +1,10 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
-//console.log('reactionSchema:', reactionSchema); // Add this line to check the value of reactionSchema
+//console.log('reactionSchema:', reactionSchema); // line to check the value of reactionSchema
 
 // Schema to create Thought model
-//console.log('Creating thoughtSchema...'); // Add this line to indicate the creation of thoughtSchema
+//console.log('Creating thoughtSchema...'); // line to indicate the creation of thoughtSchema
 const thoughtSchema = new Schema(
     {
       thoughtText: {
@@ -26,7 +26,7 @@ const thoughtSchema = new Schema(
     },
   );
 
-//console.log('thoughtSchema:', thoughtSchema); // Add this line to check the value of thoughtSchema
+//console.log('thoughtSchema:', thoughtSchema); // line to check the value of thoughtSchema
 
 // Define virtual property to calculate the length of the thought's 'reactions' array field on query
 thoughtSchema.virtual('reactionCount').get(function() {
@@ -36,7 +36,7 @@ thoughtSchema.virtual('reactionCount').get(function() {
 // Initialize Thought model
 const Thought = model('thought', thoughtSchema);
 
-//console.log('Thought model created:', Thought); // Add this line to confirm the creation of Thought model
+//console.log('Thought model created:', Thought); // line to confirm the creation of Thought model
 
 // Export Thought model
 module.exports = Thought;
