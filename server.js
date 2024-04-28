@@ -12,6 +12,12 @@ const app = express();
 // MongoDB connection string
 const connectionString = 'mongodb://localhost:27017/socialMedia_DB';
 
+// Connect to MongoDB
+mongoose.connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
