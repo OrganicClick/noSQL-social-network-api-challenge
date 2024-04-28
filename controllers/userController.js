@@ -32,13 +32,26 @@ module.exports = {
     // Create a new user
     async createUser(req, res) {
       try {
-        const user = await User.create(req.body);
+        // Destructure the request body to extract username and email
+        const { username, email } = req.body;
+  
+        // Create a new user document with the specified fields
+        const user = await User.create({
+          username,
+          email,
+          thoughts: [], // Initialize thoughts array
+          friends: [], // Initialize friends array
+          friendCount: 0 // Initialize friendCount
+        });
+  
+        // Send the created user object in the response
         res.status(201).json(user);
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Server error' });
+      } catch (err) {
+        // Handle errors
+        console.error(err);
+        res.status(500).json({ error: 'Failed to create user' });
       }
-    },
+    },,
 
     // Update a user by ID
   async updateUser(req, res) {
