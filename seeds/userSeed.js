@@ -5,11 +5,12 @@ const User = require('../models/User'); // User model is defined in models/User.
 async function seedUsers() {
     // Seed user data
     const userData = [
-        { username: 'user1', email: 'user1@example.com' },
-        { username: 'user2', email: 'user2@example.com' },
-        { username: 'user3', email: 'user3@example.com' },
-        { username: 'user4', email: 'user4@example.com' }
+        { username: 'john_doe123', email: 'john_doe123@example.com' },
+        { username: 'emma_smith456', email: 'emma_smith456@example.com' },
+        { username: 'alex_jones789', email: 'alex_jones789@example.com' },
+        { username: 'sarah_adams101112', email: 'sarah_adams101112@example.com' }
     ];
+    
 
     try {
         // Insert users into the database
