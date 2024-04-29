@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-//Import functions from thoughtController file
+// Import functions from thoughtController file
 const {
     getAllThoughts,
     getSingleThought,
@@ -31,5 +31,4 @@ router.route('/:thoughtId/reactions/:reactionId')
     .delete(deleteReaction); // DELETE request to delete a reaction by its ID
 
 // Export router
-
 module.exports = router;
