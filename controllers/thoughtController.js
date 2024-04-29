@@ -54,37 +54,49 @@ module.exports = {
     }
   },
 
-  // Delete a thought by ID
-  async deleteThought(req, res) {
+   // Add a reaction to a thought
+   async addReaction(req, res) {
     try {
-      const thought = await Thought.findByIdAndDelete(req.params.thoughtId);
-      if (!thought) {
-        return res.status(404).json({ error: 'Thought not found' });
-      }
-      res.json({ message: 'Thought deleted successfully' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
-    }
-  },
+        const { reactionBody } = req.body;
+        const thoughtId = req.params.thoughtId;
 
-  // Add a reaction to a thought
-  async addReaction(req, res) {
-    try {
-      // Add logic to add a reaction to a thought
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
-    }
-  },
+        const updatedThought = await Thought.findByIdAndUpdate(
+            thoughtId,
+            { $push: { reactions: { reactionBody } } },
+            { new: true }
+        );
 
-  // Delete a reaction from a thought
-  async deleteReaction(req, res) {
-    try {
-      // Add logic to delete a reaction from a thought
+        if (!updatedThought) {
+            return res.status(404).json({ error: 'Thought not found' });
+        }
+
+        res.json(updatedThought);
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+},
+
+// Delete a reaction from a thought
+async deleteReaction(req, res) {
+    try {
+        const thoughtId = req.params.thoughtId;
+        const reactionId = req.params.reactionId;
+
+        const updatedThought = await Thought.findByIdAndUpdate(
+            thoughtId,
+            { $pull: { reactions: { _id: reactionId } } },
+            { new: true }
+        );
+
+        if (!updatedThought) {
+            return res.status(404).json({ error: 'Thought not found' });
+        }
+
+        res.json(updatedThought);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
     }
   }
 };
