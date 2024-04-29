@@ -16,7 +16,7 @@ const userSchema = new Schema(
       match: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/, // Regular expression to validate email format
     },
     thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
-    friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    friends: [{ type: Schema.Types.ObjectId, ref: 'User' }], // Use ObjectId for referencing users
   },
   {
     toJSON: {
@@ -28,11 +28,11 @@ const userSchema = new Schema(
 
 // Define virtual property to calculate friend count
 userSchema.virtual('friendCount').get(function() {
-    return this.friends.length;
-  });
+  return this.friends.length;
+});
 
 // Initialize User model
-const User = model('user', userSchema);
+const User = model('User', userSchema); // Change model name to 'User'
 
 // Export User model
 module.exports = User;
