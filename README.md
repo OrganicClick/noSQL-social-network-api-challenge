@@ -48,9 +48,17 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 5. Run `npm install` to install all dependencies.
 
+6. Be sure to have MongoDB Compass installed by following the documentation at this link (https://www.mongodb.com/products/tools/compass)
+
 
 ## Usage
+1. To start the  server, run `npm start`. The server should now be listening at http://localhost:3001 and the MongoDB database should be seeded.
 
+2. Open the Insomnia application and enter http://localhost:3001 as the base URL
+
+3. You should now be free to make GET, POST, PUT, and DELETE requests to the specified endpoints as outlined in the source code.
+
+** NOTE: There is an issue with POST and DELETE requests for reactions that have yet to be resolved.
 
 ## Contributing
 If you have suggestions or contributions to add, please follow the guidelines listed below. Pull requests will be reviewed in the order that they are received.
