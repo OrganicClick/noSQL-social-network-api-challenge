@@ -66,32 +66,6 @@ module.exports = {
     }
   },
 
-  // Add a reaction to a thought
-  async addReaction(req, res) {
-    try {
-      console.log("Adding reaction to thought:", req.params.thoughtId);
-      const { reactionBody } = req.params;
-      const thoughtId = req.params.thoughtId;
-
-      const updatedThought = await Thought.findByIdAndUpdate(
-        thoughtId,
-        { $push: { reactions: { reactionBody } } },
-        { new: true }
-      );
-
-      console.log("Updated thought with reaction:", updatedThought);
-
-      if (!updatedThought) {
-        return res.status(404).json({ error: "Thought not found" });
-      }
-
-      res.json(updatedThought);
-    } catch (error) {
-      console.error("Error adding reaction to thought:", error);
-      res.status(500).json({ error: "Server error" });
-    }
-  },
-
  // Delete a thought by ID
 async deleteThought(req, res) {
   try {
